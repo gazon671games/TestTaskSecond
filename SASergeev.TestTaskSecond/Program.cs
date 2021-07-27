@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net;
+using System.Net.Http.Json;
 
 namespace SASergeev.TestTaskSecond
 {
@@ -6,7 +9,8 @@ namespace SASergeev.TestTaskSecond
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            
         }
     }
 }
