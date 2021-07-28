@@ -1,4 +1,5 @@
 ﻿using SASergeev.TestTaskSecond.Controller;
+using System.IO;
 
 namespace SASergeev.TestTaskSecond
 {
@@ -6,8 +7,8 @@ namespace SASergeev.TestTaskSecond
     {
         static void Main(string[] args)
         {
-
             WeatherConsole.ConsoleGetWeather();
+            
         }
     }
 

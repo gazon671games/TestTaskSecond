@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using SASergeev.TestTaskSecond.Models;
 
 namespace SASergeev.TestTaskSecond.Controller
 {
@@ -8,60 +9,45 @@ namespace SASergeev.TestTaskSecond.Controller
     {
         public static void ConsoleGetWeather()
         {
-            string city = CityName();
+            string city = CityName.GetName();
             var Weather = new WeatherController();
-            Console.WriteLine(Weather.GetWeather(city));
+            var message = Weather.GetWeather(city);
+            string WeatherStatus = message.ToString();
+            Console.WriteLine(WeatherStatus);
+            if (message.CheckFlag())
+            {
+                var FileWriterStatus = FileWriterConsole(WeatherStatus);
+                Console.WriteLine(FileWriterStatus);
+            }
+            else { Console.WriteLine("Errors don't come to save"); }
             DoitAgain(Weather);
-
-            static void DoitAgain(WeatherController controller)
-            {
-                var button = PressButton(); 
-                while (button.Key != ConsoleKey.Escape)
-                {
-                    Console.Clear();
-                    string city = CityName();
-                    Console.WriteLine(controller.GetWeather(city));
-                    button = PressButton();
-                }
-                static ConsoleKeyInfo PressButton()
-                {
-                    string message = "\nOne more?\nPress any button to continue or ESC to stop";
-                    Console.WriteLine(message);
-                    ConsoleKeyInfo x = Console.ReadKey();
-                    return x;
-                }
-            }
         }
-        private static string CityName()
+
+        static void DoitAgain(WeatherController controller)
         {
-            string CityName = CityNameGet();
-            while (!CityNameCheck(CityName))
+            var button = PressButton();
+            while (button.Key != ConsoleKey.Escape)
             {
-                Console.WriteLine("Wrong City-Name, please write it again ");
-                CityName = CityNameGet();
-            }
-            return CityName;
-            static bool CityNameCheck(string CityName)
-            {
-
-                Regex RegexFirst = new Regex(@"^[\u0000-\u007F]+$");
-                if (CityName.All(char.IsLetter) && !CityName.All(char.IsWhiteSpace))
-                {
-                    return true;
-                }
-                return false;
-
-            }
-            static string CityNameGet()
-            {
-                Console.WriteLine("Enter a City-Name to get the Weather report");
-                string CityName = Console.ReadLine();
-                return CityName;
+                Console.Clear();
+                string city = CityName.GetName();
+                Console.WriteLine(controller.GetWeather(city));
+                button = PressButton();
             }
         }
-       
-
-
+        static ConsoleKeyInfo PressButton()
+        {
+            string message = "\nOne more?\nPress any button to continue or ESC to stop";
+            Console.WriteLine(message);
+            ConsoleKeyInfo x = Console.ReadKey();
+            return x;
+        }
+        
+        private static string FileWriterConsole(string text)
+        {
+            var newFileWriter = new WeatherFileWriter();
+            var result = newFileWriter.SaveQuery(text);
+            return result;
+        }
 
     }
 }
