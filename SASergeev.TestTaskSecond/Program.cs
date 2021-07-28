@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Net;
-using System.Net.Http.Json;
+﻿using SASergeev.TestTaskSecond.Controller;
 
 namespace SASergeev.TestTaskSecond
 {
@@ -9,8 +6,9 @@ namespace SASergeev.TestTaskSecond
     {
         static void Main(string[] args)
         {
-            
-            
+
+            WeatherConsole.ConsoleGetWeather();
         }
     }
+
 }
