@@ -52,20 +52,17 @@ namespace SASergeev.TestTaskSecond.Controller
 
         public class Message 
         {
-            private string _text { get; }
-            private bool _flag { get; }
-            
+            private string _text;
+            private bool _flag;
             public Message(string text, bool flag)
             {
                 _text = text;
                 _flag = flag;
             }
-
             public override string ToString()
             {
                 return _text;
             }
-
             public bool CheckFlag()
             {
                 return _flag;

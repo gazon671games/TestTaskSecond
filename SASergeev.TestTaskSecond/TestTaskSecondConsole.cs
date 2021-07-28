@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Linq;
-using System.Text.RegularExpressions;
 using SASergeev.TestTaskSecond.Models;
 
 namespace SASergeev.TestTaskSecond.Controller
 {
-    static class WeatherConsole
+    static class TestTaskSecondConsole
     {
         public static void ConsoleGetWeather()
         {

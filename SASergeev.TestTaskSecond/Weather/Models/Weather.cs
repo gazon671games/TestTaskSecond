@@ -1,13 +1,11 @@
-﻿
-
-namespace SASergeev.TestTaskSecond.Models
+﻿namespace SASergeev.TestTaskSecond.Models
 {
     public class Weather
     {
-        private double _temperature { get; set; }
-        private int _humidity { get; set; }
-        private int _sunrise { get; set; }
-        private int _sunset { get; set; }
+        private double _temperature;
+        private int _humidity;
+        private int _sunrise;
+        private int _sunset;
 
 
         public Weather(double Tempeture, int Humidity, int Sunrise, int Sunset)

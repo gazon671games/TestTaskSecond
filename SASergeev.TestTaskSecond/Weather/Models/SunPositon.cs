@@ -12,7 +12,6 @@ namespace SASergeev.TestTaskSecond.Models
         {
             return ConvertingToDate(TimeStamp).ToLocalTime();
         }
-
         private static DateTime ConvertingToDate(int time)
         {
             var TimeStampToConvert = time;
