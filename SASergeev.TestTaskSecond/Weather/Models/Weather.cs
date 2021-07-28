@@ -15,7 +15,6 @@
             _sunrise = Sunrise;
             _sunset = Sunset;
         }
-
         public override string ToString()
         {
             string GetLocalTime(int time) => SunPositon.ConvertToDateLocal(time).ToShortTimeString();

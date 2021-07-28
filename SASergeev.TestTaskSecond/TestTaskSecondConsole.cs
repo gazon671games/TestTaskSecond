@@ -40,7 +40,6 @@ namespace SASergeev.TestTaskSecond
             ConsoleKeyInfo x = Console.ReadKey();
             return x;
         }
-        
         private static string FileWriterConsole(string text)
         {
             var newFileWriter = new WeatherFileWriter();
