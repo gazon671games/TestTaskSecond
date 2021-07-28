@@ -1,7 +1,8 @@
 ﻿using System;
 using SASergeev.TestTaskSecond.Models;
+using SASergeev.TestTaskSecond.Controller;
 
-namespace SASergeev.TestTaskSecond.Controller
+namespace SASergeev.TestTaskSecond
 {
     static class TestTaskSecondConsole
     {
