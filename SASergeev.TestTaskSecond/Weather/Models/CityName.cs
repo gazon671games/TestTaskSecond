@@ -19,14 +19,11 @@ namespace SASergeev.TestTaskSecond.Models
 
             static bool NameCheck(string CityName)
             {
-
-                Regex RegexFirst = new Regex(@"^[\u0000-\u007F]+$");
                 if (CityName.All(char.IsLetter) && !CityName.All(char.IsWhiteSpace))
                 {
                     return true;
                 }
                 return false;
-
             }
             static string NameGet()
             {
